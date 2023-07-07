@@ -22,8 +22,6 @@ class Solution:
             if level_value[0] % 2 == 0:
                 ans.append(level_value[1])
             else:
-                tmp = []
-                for val in range(len(level_value[1]) - 1, -1, -1):
-                    tmp.append(level_value[1][val])
-                ans.append(tmp)
+                level_value[1].reverse()
+                ans.append(level_value[1])
         return ans
