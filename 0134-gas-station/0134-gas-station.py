@@ -7,9 +7,6 @@ class Solution:
         left = right = 0
         total = diff[0]
         while (right + 1) % n != left:
-            print(f"{left=}")
-            print(f"{right=}")
-            print(f"{total=}")
             if total < 0:
                 left -= 1
                 if left < 0:
