@@ -1,19 +1,19 @@
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         stack = []
+        
+        operations = {
+            "+": lambda a, b: a + b,
+            "-": lambda a, b: a - b,
+            "*": lambda a, b: a * b,
+            "/": lambda a, b: math.trunc(a / b)
+        }
         for token in tokens:
-            try:
+            if token not in "+-*/":
                 stack.append(int(token))
-            except:
+            else:
                 num1 = stack.pop()
                 num2 = stack.pop()
-                if token == "+":
-                    result = num1 + num2
-                elif token == "-":
-                    result = num2 - num1
-                elif token == "*":
-                    result = num2 * num1
-                elif token == "/":
-                    result = math.trunc(num2 / num1)
-                stack.append(result)
+                operation = operations[token]
+                stack.append(operation(num2, num1))
         return stack.pop()
