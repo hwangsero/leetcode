@@ -1,7 +1,5 @@
 class Solution:
     def reverseWords(self, s: str) -> str:
-        splited = s.strip().split(" ")
-        splited.reverse()
-        splited = filter(lambda x: x != "", splited)
-        print(splited)
-        return " ".join(splited)
+        words = s.split()  # 공백을 기준으로 단어를 분리
+        reversed_words = words[::-1]  # 단어의 순서를 뒤집음
+        return ' '.join(reversed_words) 
