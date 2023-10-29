@@ -27,6 +27,4 @@ class Solution:
             for y in range(n):
                 check_cell(x, y)
 
-        for x in range(m):
-            for y in range(n):
-                board[x][y] = check_board[x][y]
+        board[:] = check_board[:]
