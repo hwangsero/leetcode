@@ -8,7 +8,7 @@ class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
         cur = head
         while cur:
-            if cur.next is None or cur.val != cur.next.val:
+            if not cur.next or cur.val != cur.next.val:
                 cur = cur.next
             else:
                 cur.next = cur.next.next
